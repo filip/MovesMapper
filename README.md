@@ -30,7 +30,10 @@ Make sure that you are using Processing 2.0 and have installed the ControlP5 GUI
 `-F 'grant_type=authorization_code' \` <br/>
 `-F 'redirect_uri=<redirect_uri>' \` <br/>
 `-F 'code=<code_response>' \https://api.moves-app.com/oauth/v1/access_token?`
-	
+
+If above is not working try a single line without "\" - like this:
+`curl \-F 'client_id=<client_id>' -F 'client_secret=<client_secret>' -F 'grant_type=authorization_code' -F 'redirect_uri=<redirect_uri>' -F 'code=<code_response>' \https://api.moves-app.com/oauth/v1/access_token?`
+
 1. If everything is formed correctly and your request is made within 5 minutes of entering the PIN in the Moves app, the JSON response will contain your access token.
 1. Launch Moves app on your iPhone and sync your most recent moves to the server.
 1. Set the accessToken string on line 25.
